@@ -1,5 +1,5 @@
 body {
-
+  text-align: center;
 }
 
 .container {
@@ -9,9 +9,9 @@ body {
     margin-top: 200px;
     margin-bottom: auto;
     padding: 1em;
-    border: 5px solid #ff0000;
+    border: 5px solid #30ca82;
     border-radius: 10px;
-    background-color: rgb(34, 40, 46);
+    background-color: rgb(73, 94, 119);
     color: white;
 }
 h1{
@@ -24,14 +24,16 @@ p {
     font-size: 20px;
 }
 .green{
-    color: #0ab20a;
+    color: #479f47;
 }
 #button{
     margin-top: 10px;
-    padding: 5px;
-    background-color: #0ab20a;
+    font-size: medium;
+    padding: 10px;
+    background-color: #479f47;
     border: none;
     border-radius: 10px;
+    color: white;
 }
 .passwords{
     display: flex;

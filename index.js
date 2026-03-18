@@ -25,25 +25,22 @@ const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "="
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "<", ">", "/", "?", "~"
 ];*/
-let charset = []
+//let charset = []
 //randompass = Math.floor(Math.random() * charset.length);
 
 function generatepassword(){
     let password = ""
+    let charset = characters
 
-    if (includeNumbers.checked){
-        charset = [...characters,...numbers]
+    if (includeSymbols.checked && includeNumbers.checked){
+        charset = [...charset,...numbers,...symbols]
+    }else if (includeNumbers.checked){
+        charset = [...charset,...numbers]
     } else if (includeSymbols.checked){
-        charset = [...characters,...symbols]
-    } else if (includeSymbols.checked && includeNumbers.checked){
-        charset = [...characters,...numbers,...symbols]
-    } else {
-        charset = [...characters]
+        charset = [...charset,...symbols]
     }
 
-
     for (let i = 0; i < passlength; i++) {
-
         randompass = charset[Math.floor(Math.random() * charset.length)]
          password += randompass
     }
@@ -64,7 +61,7 @@ function copyToClipboard(event) {
 
     if (textToCopy && textToCopy !== "Password") {
         navigator.clipboard.writeText(textToCopy).then(() => {
-            //alert("Password copied to clipboard!");
+            console.log("Password copied to clipboard!");
         });
     }
 }
